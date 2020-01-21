@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document Size</title>
+    <style>
+        html, body {
+            margin:0;
+            padding:0;
+            background-color: #eaeaea;
+            color: #3d3d3d;
+            font-family:sans-serif; 
+        }
+
+        body {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #viewportSize {
+            margin: auto;
+            font-size: 2.5rem;
+            word-break: normal;
+        }
+    </style>
+</head>
+<body>
+    <span id="viewportSize"></span>
+    <script>
+        displayWindowSize = () => {
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            document.getElementById('viewportSize').innerText = `${width} x ${height}`;
+        };
+        displayWindowSize();
+        window.onresize = () => {
+            displayWindowSize();
+        };
+    </script>
+
+</body>
+</html>
